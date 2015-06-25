@@ -1,0 +1,42 @@
+.item-radio input:checked ~ .radio-icon {
+    color: white;
+}
+
+.item-content {
+    font-weight: bold;
+}
+
+.green.item-radio input:checked ~ .item-content {
+    background-color: green;
+    color: white;
+}
+
+.green .item-content {
+    background-color: green;
+    color: white;
+}
+
+.yellow.item-radio input:checked ~ .item-content {
+    background-color: #ffc900;
+    color: white;
+}
+
+.yellow .item-content {
+    background-color: #ffc900;
+    color: white;
+}
+
+.red.item-radio input:checked ~ .item-content {
+    background-color: red;
+    color: white;
+}
+
+.red .item-content {
+    background-color: red;
+    color: white;
+}
+
+gmap .mapcontainer {
+    width: 600px;
+    height: 800px;
+}

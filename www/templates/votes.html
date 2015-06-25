@@ -1,0 +1,15 @@
+<ion-view view-title="Votes">
+  <ion-content>
+    <h1>{{current_vote.title}}</h1>
+    <ion-radio class="green" ng-model="current_vote.vote" ng-value="0">:) I'm happy!</ion-radio>
+    <ion-radio class="yellow" ng-model="current_vote.vote" ng-value="1">:| Average</ion-radio>
+    <ion-radio class="red" ng-model="current_vote.vote" ng-value="2">:( Too bad</ion-radio>
+    <div class="button-bar">
+      <a class="button" ng-hide="isFirst()" ng-click="prevPage()">Previous</a>
+      <a class="button" ng-hide="isLast()" ng-click="nextPage()">Next</a>
+    </div>
+    <button ng-show="isCompleted()" class="button button-full button-positive">
+      Send
+    </button>
+  </ion-content>
+</ion-view>
