@@ -74,4 +74,23 @@ angular.module('starter.controllers', ['mydirectives'])
   $scope.goMap = function() {
     $state.go('map');
   };
+  $scope.goPhoto = function() {
+    $state.go('photo');
+  };
+})
+
+.controller('PickPhotoCtrl', function($scope, Camera) {
+  $scope.getPhoto = function() {
+    console.log('Getting camera');
+    Camera.getPicture({
+      quality: 75,
+      targetWidth: 320,
+      targetHeight: 320,
+      saveToPhotoAlbum: false
+    }).then(function(imageURI) {
+      $scope.lastPhoto = imageURI;
+    }, function(err) {
+
+    });
+  }
 });

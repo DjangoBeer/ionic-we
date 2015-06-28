@@ -4,7 +4,11 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'mydirectives'])
+angular.module('starter', ['ionic', 'starter.controllers', 'mydirectives', 'myservices'])
+
+.config(function($compileProvider){
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -51,6 +55,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'mydirectives'])
     url: "/wall",
     templateUrl: "templates/tilewall.html",
     controller: 'TileWallCtrl'
+  })
+
+  .state('photo', {
+    url: "/photo",
+    templateUrl: "templates/pickphoto.html",
+    controller: 'PickPhotoCtrl'
   });
 
   // if none of the above states are matched, use this as the fallback
