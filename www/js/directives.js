@@ -1,9 +1,9 @@
 var TilesList = React.createClass({displayName: "TilesList",
   render: function() {
-  var that = this;
-  return React.createElement("tbody", null, this.props.tiles.map(function(tile, i) {
-    return React.createElement("button", {className: "button button-large button-outline button-positive", onClick: that.props.clickHandler.bind(that, tile + 1)}, tile + 1)
-  }));
+    var that = this;
+    return React.createElement("tbody", null, this.props.tiles.map(function(tile, i) {
+      return React.createElement("button", {className: "button button-large button-outline button-positive", onClick: that.props.clickHandler.bind(that, tile + 1)}, tile + 1)
+    }));
   }
 });
 
